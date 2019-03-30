@@ -1,0 +1,16 @@
+.cardWrapper {
+  width: 400px;
+  min-height: 195px;
+  border: 1px solid lightgrey;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 10px;
+}
+
+.btn {
+  width: 130px;
+  text-align: center;
+  margin-left:auto;
+}
