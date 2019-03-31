@@ -3,6 +3,7 @@ import './App.css';
 import CardComponent from './components/CardComponent';
 import UserComponent from './components/UserComponent';
 
+//Renderar CardComponent och Usercomponent, hanterar tre states: color, users och concatUsers.
 class App extends Component {
   constructor(props) {
     super(props);
@@ -12,6 +13,7 @@ class App extends Component {
   };
 }
 
+  //bildar en ny array med hjälp av concat-metoden
   addUser = (event) => {
     let userNames = this.state.users.concat(event);
     this.setState({
@@ -19,6 +21,7 @@ class App extends Component {
     })
   }
 
+  //tar bort sista namnet i listan med slice-metoden
   removeUser = () => {
     let removeUserName = this.state.users.slice(0, -1);
     this.setState({
@@ -26,12 +29,14 @@ class App extends Component {
     })
   }
 
+  //togglar color mellan true och false
   toggleColor = () => {
     this.setState(prevState =>({
       color: !prevState.color,
     }))
   }
 
+  //hanterar vår input och skickar in värdet i concatUsers
   handleInput = (event) => {
     this.setState({concatUsers: event.target.value})
   }

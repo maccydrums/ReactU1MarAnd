@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import styles from './CardComponent.module.css';
 
+//Komponent som innehåller en wrapper med en button som togglar om innehållet ska visas. Renderar även det som passas in som children
 class CardComponent extends Component {
   constructor(props) {
     super(props);
@@ -9,16 +10,15 @@ class CardComponent extends Component {
     }
   }
 
+  //Toggle som sätter condition till antingen true eller false
   showContent = (condition) => {
     if (this.state.condition) {
-      return (
-        this.setState({condition: false})
-      )
-    } return (
-      this.setState({condition: true})
-    )
+      return this.setState({condition: false})
+    }
+    return this.setState({condition: true})
   }
 
+  //Om condition är true så visas innehållet (children som passas in)
   showChildren = (condition) => {
     if (this.state.condition) {
       return <div className="cardContent">{this.props.children}</div>;
